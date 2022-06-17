@@ -11,7 +11,8 @@ namespace JA
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            Console.WindowWidth = 150;
             var list = new Dictionary<string, Interval>()
             {
                 ["all"] = Interval.All,
@@ -138,24 +139,36 @@ namespace JA
                 Console.WriteLine();
             }
             Console.WriteLine();
-
             var span = Interval.ClosedRange(0, 100);
-            Console.WriteLine($"divide span = {span} into 5 segments");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write($"divide span = {span} into ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"5 segments");
+            Console.ForegroundColor = ConsoleColor.Gray;
             var div = span.Divide(5);
             int index = 0;
             foreach (var sub in div)
             {
                 Console.WriteLine($"segment({++index}) = {sub}");
             }
-            Console.WriteLine($"split span = {span} into 3 places");
-            var parts = span.Split(30, 45, 75);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            var split = new double[] { 30, 45, 75 };
+            Console.Write($"split span = {span} into ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(Show(split));
+            Console.ForegroundColor = ConsoleColor.Gray;
+            var parts = span.Split(split);
             index = 0;
             foreach (var sub in parts)
             {
                 Console.WriteLine($"segment({++index}) = {sub}");
             }
         }
-
+        public static string Show<T>(params T[] array)
+            => new DisplayArray<T>(array, DisplayArray<T>.DefaultFormat);
+        public static string Show<T>(T[] array, string format)
+            => new DisplayArray<T>(array, format);
         
     }
 }

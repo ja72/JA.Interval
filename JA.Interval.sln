@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1972
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppIntervals", "ConsoleAppLocations\ConsoleAppIntervals.csproj", "{A4B69A9E-A384-44DC-B8DA-F86DF62A3270}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JA.Interval.Demo", "JA.Interval.Demo\JA.Interval.Demo.csproj", "{A4B69A9E-A384-44DC-B8DA-F86DF62A3270}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JA.Interval", "JA.Interval\JA.Interval.csproj", "{489859C8-82CE-4502-9CC1-6A221B24B88C}"
 EndProject

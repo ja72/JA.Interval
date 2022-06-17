@@ -31,7 +31,11 @@ namespace JA
             Separator = separator;
             OpenBrace = openBrace;
             CloseBrace = closeBrace;
-        }
+        }        
+        public static implicit operator string(DisplayArray<T> display) => display.ToString();
+        public static string DefaultFormat { get; set; } = "g";
+        public static implicit operator DisplayArray<T>(T[] array)
+            => new DisplayArray<T>(array, DefaultFormat);
 
         public T[] Array { get; set; }
         public override string Format { get; }
