@@ -10,7 +10,9 @@ namespace JA
 
     class Program
     {
+#pragma warning disable IDE0060 // Remove unused parameter
         static void Main(string[] args)
+#pragma warning restore IDE0060 // Remove unused parameter
         {
             Console.WindowWidth = 150;
             var list = new Dictionary<string, Interval>()
